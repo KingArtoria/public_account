@@ -32,6 +32,51 @@
             <span v-for="(item, index) in obtainInfo.area" :key="index">{{ item }}</span>
           </div>
         </div>
+        <div class="content_3_2" v-if="obtainInfo.type == 3">
+          <div class="content_3_2_1">产品类型：{{ obtainInfo.product }}</div>
+          <div class="content_3_2_1">货源类型：{{ obtainInfo.source }}</div>
+          <div class="content_3_2_1">客单价：{{ obtainInfo.price }}</div>
+          <div class="content_3_2_1">产品名称：{{ obtainInfo.product_name }}</div>
+          <div class="content_3_2_1">一件代发：{{ obtainInfo.issuing }}</div>
+          <div class="content_3_2_1">相关资质：{{ obtainInfo.supplement }}</div>
+          <div class="content_3_2_1">
+            合作地区：
+            <span v-for="(item, index) in obtainInfo.area" :key="index">{{ item }}</span>
+          </div>
+        </div>ss
+        <div class="content_3_2" v-if="obtainInfo.type == 4">
+          <div class="content_3_2_1">类型：{{ obtainInfo.source }}</div>
+          <div class="content_3_2_1">产品类型：{{ obtainInfo.product }}</div>
+          <div class="content_3_2_1">结算周期：{{ obtainInfo.settcycle_id }}</div>
+          <div class="content_3_2_1">销货能力：{{ obtainInfo.assessment }}</div>
+          <div class="content_3_2_1">合作模式：{{ obtainInfo.alliance }}</div>
+          <div class="content_3_2_1">一件代发：{{ obtainInfo.issuing }}</div>
+          <div class="content_3_2_1">其他补充：{{ obtainInfo.supplement }}</div>
+          <div class="content_3_2_1">
+            合作地区：
+            <span v-for="(item, index) in obtainInfo.area" :key="index">{{ item }}</span>
+          </div>
+        </div>
+        <div class="content_3_2" v-if="obtainInfo.type == 5">
+          <div class="content_3_2_1">提供类型：{{ obtainInfo.source }}</div>
+          <div class="content_3_2_1">需求类型：{{ obtainInfo.comprehensive }}</div>
+          <div class="content_3_2_1">合作要求：{{ obtainInfo.assessment }}</div>
+          <div class="content_3_2_1">其他补充：{{ obtainInfo.supplement }}</div>
+          <div class="content_3_2_1">
+            合作地区：
+            <span v-for="(item, index) in obtainInfo.area" :key="index">{{ item }}</span>
+          </div>
+        </div>
+        <div class="content_3_2" v-if="obtainInfo.type == 6">
+          <div class="content_3_2_1">提供类型：{{ obtainInfo.source }}</div>
+          <div class="content_3_2_1">需求类型：{{ obtainInfo.comprehensive }}</div>
+          <div class="content_3_2_1">合作要求：{{ obtainInfo.assessment }}</div>
+          <div class="content_3_2_1">其他补充：{{ obtainInfo.supplement }}</div>
+          <div class="content_3_2_1">
+            合作地区：
+            <span v-for="(item, index) in obtainInfo.area" :key="index">{{ item }}</span>
+          </div>
+        </div>
       </div>
       <div class="content_4">
         <div class="content_4_1">
@@ -63,12 +108,47 @@
           </div>
         </div>
       </div>
-      <div class="content_5">
+      <div class="content_5" v-if="obtainInfo.type == 1 || obtainInfo.type == 2">
         <div class="content_5_1">
           <div class="content_5_1_1" />
           <div class="content_5_1_2">资源详情</div>
         </div>
         <div class="content_5_2">{{ obtainInfo.assessment }}</div>
+      </div>
+      <div class="content_5" v-if="obtainInfo.type == 3">
+        <div class="content_5_1">
+          <div class="content_5_1_1" />
+          <div class="content_5_1_2">产品优势</div>
+        </div>
+        <div class="content_5_2">{{ obtainInfo.product_advantage }}</div>
+      </div>
+      <div class="content_5" v-if="obtainInfo.type == 4">
+        <div class="content_5_1">
+          <div class="content_5_1_1" />
+          <div class="content_5_1_2">渠道简介</div>
+        </div>
+        <div class="content_5_2">{{ obtainInfo.introduce }}</div>
+      </div>
+      <div class="content_5" v-if="obtainInfo.type == 4">
+        <div class="content_5_1">
+          <div class="content_5_1_1" />
+          <div class="content_5_1_2">产品要求</div>
+        </div>
+        <div class="content_5_2">{{ obtainInfo.product_advantage }}</div>
+      </div>
+      <div class="content_5" v-if="obtainInfo.type == 5">
+        <div class="content_5_1">
+          <div class="content_5_1_1" />
+          <div class="content_5_1_2">提供的资源</div>
+        </div>
+        <div class="content_5_2">{{ obtainInfo.product_advantage }}</div>
+      </div>
+      <div class="content_5" v-if="obtainInfo.type == 5">
+        <div class="content_5_1">
+          <div class="content_5_1_1" />
+          <div class="content_5_1_2">需求的资源</div>
+        </div>
+        <div class="content_5_2">{{ obtainInfo.info }}</div>
       </div>
     </div>
   </div>
@@ -93,7 +173,6 @@ export default {
     // ? 资源详情
     reGetObtainInfo() {
       reGetObtainInfo(this.obtainInfoParams).then(res => {
-        // 字符串,分割成数组
         res.data[0].area = res.data[0].area.split(',');
         this.obtainInfo = res.data[0];
       });
