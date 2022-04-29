@@ -1,0 +1,129 @@
+.page {
+  height: calc(100vh - 4.096rem);
+  overflow: scroll;
+  background-color: #f8f8f8;
+  padding: .48rem .64rem 0;
+  box-sizing: border-box;
+}
+
+.card {
+  box-shadow: 0px 0px 1.472rem 0px rgba(134, 134, 134, 0.11);
+  border-radius: .32rem;
+  background-color: white;
+}
+
+.info {
+  height: 10.144rem;
+  background-image: url('http://account.channel.bdhuoke.com/img/user_kapian@2x.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+
+  .top {
+    margin: 1.344rem 0 0 .768rem;
+    display: flex;
+
+    .top-left {
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 50%;
+      overflow: hidden;
+
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .top-right {
+      flex: 1;
+      margin-left: 1.312rem;
+
+      .title {
+        display: flex;
+        margin-right: .64rem;
+      }
+
+      .username {
+        font-size: 1.024rem;
+      }
+
+      .desc {
+        margin-top: .86rem;
+        font-size: .832rem;
+      }
+
+      .posi {
+        margin-left: .64rem;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .768rem;
+    padding: 0 .8rem .608rem 1.056rem;
+  }
+
+  .btn {
+    width: 4.32rem;
+    height: 1.44rem;
+    border-radius: .72rem;
+    border: 1px solid white;
+  }
+}
+
+.count-wrap {
+  height: 5.344rem;
+  margin-top: .96rem;
+  text-align: center;
+  padding-top: 1.12rem;
+
+  .count {
+    margin-bottom: .768rem;
+    color: #2D80FD;
+    font-size: 1.92rem;
+  }
+
+  .tip {
+    font-size: .768rem;
+    color: #1A1A1A;
+  }
+}
+
+.menu {
+  margin-top: .96rem;
+  padding: 1.44rem 0;
+
+  .menu-item {
+    margin: 0 .544rem 2.112rem .416rem;
+    display: flex;
+    align-items: center;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .icon {
+    width: 1.184rem;
+    height: 1.184rem;
+  }
+
+  .title {
+    font-size: .832rem;
+    color: #1A1A1A;
+    margin-left: .512rem;
+  }
+
+  .arrow {
+    width: .384rem;
+    height: .64rem;
+    margin-left: auto;
+    background-image: url('http://account.channel.bdhuoke.com/img/user_tiaozhuan@2x.png');
+  }
+}

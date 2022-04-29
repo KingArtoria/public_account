@@ -8,7 +8,7 @@
       <img src="http://account.channel.bdhuoke.com/img/huiyuan-2@2x.png" class="navigation_1_1" />
       <div class="navigation_1_2">会员</div>
     </div>
-    <div class="navigation_1" @click="go('/')">
+    <div class="navigation_1" @click="go('/user')">
       <img src="http://account.channel.bdhuoke.com/img/wode-2@2x.png" class="navigation_1_1" />
       <div class="navigation_1_2">我的</div>
     </div>
