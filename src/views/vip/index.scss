@@ -1,0 +1,153 @@
+.head {
+  background: url('http://account.channel.bdhuoke.com/img/dingbt@2x.png') no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 4.8rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  position: fixed;
+  top: 0;
+  .head_1 {
+    font-size: 1.024rem;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #955c1f;
+    line-height: 1;
+    flex: 1;
+    text-align: center;
+  }
+  .head_2 {
+    position: absolute;
+    width: 1.056rem;
+    height: 0.192rem;
+    background: #ab742a;
+    border-radius: 0.096rem;
+    bottom: 1.344rem;
+    transition: all 0.3s;
+    transform: translateX(-8rem);
+  }
+}
+.content {
+  padding-top: 4.8rem;
+  .content_1 {
+    padding-bottom: 5.92rem;
+    .content_1_1 {
+      width: 100%;
+      height: 7.872rem;
+      border-bottom: 0.032rem #ededed solid;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0.608rem;
+      box-sizing: border-box;
+      .content_1_1_1 {
+        display: flex;
+        align-items: center;
+        .content_1_1_1_1 {
+          width: 2.944rem;
+          height: 2.88rem;
+          margin-right: 0.608rem;
+        }
+        .content_1_1_1_2 {
+          .content_1_1_1_2_1 {
+            font-size: 1.024rem;
+            font-family: PingFang SC;
+            font-weight: bold;
+            color: #292929;
+            margin-bottom: 0.576rem;
+          }
+          .content_1_1_1_2_2 {
+            font-size: 0.832rem;
+            font-family: PingFang SC;
+            font-weight: 500;
+            color: #ff4718;
+            line-height: 1;
+            margin-bottom: 0.608rem;
+          }
+          .content_1_1_1_2_3 {
+            font-size: 0.768rem;
+            font-family: PingFang SC;
+            font-weight: 500;
+            color: #8e8e8e;
+            line-height: 1;
+          }
+        }
+      }
+      .content_1_1_2 {
+        .content_1_1_2_1 {
+          display: flex;
+          align-items: flex-end;
+          font-family: PingFang SC;
+          font-weight: bold;
+          color: #ff4718;
+          .content_1_1_2_1_1 {
+            font-size: 0.832rem;
+            line-height: 1;
+          }
+          .content_1_1_2_1_2 {
+            font-size: 1.408rem;
+            line-height: 1;
+          }
+        }
+        .content_1_1_2_2 {
+          width: 4.032rem;
+          height: 1.632rem;
+          background: #ff4718;
+          border-radius: 0.832rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.896rem;
+          font-family: PingFang SC;
+          font-weight: 500;
+          color: #ffffff;
+          margin-top: 1.216rem;
+        }
+      }
+    }
+    .content_1_2 {
+      width: 22.496rem;
+      height: 10.784rem;
+      display: block;
+      margin: 0 auto;
+      margin-top: 2.784rem;
+    }
+    .content_1_3 {
+      margin-top: 2.112rem;
+      width: 24rem;
+      height: 50.048rem;
+    }
+  }
+  .content_2 {
+    .content_2_1 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 2.624rem;
+      position: relative;
+      .content_2_1_1 {
+        font-size: 1.024rem;
+        font-family: PingFang SC;
+        color: #242424;
+        line-height: 1;
+      }
+      .content_2_1_2 {
+        font-size: 1.024rem;
+        font-family: PingFang SC;
+        color: #515151;
+        line-height: 1;
+      }
+      .content_2_1_3 {
+        width: 23px;
+        height: 5px;
+        background: #edc887;
+        border-radius: 3px;
+        position: absolute;
+        top: 2.176rem;
+        transition: all 0.3s;
+      }
+    }
+  }
+}
