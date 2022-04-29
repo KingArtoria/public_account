@@ -1,0 +1,13 @@
+/* 全局样式（以app-开头） */
+// 背景图片撑满容器
+.app-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// 水平和垂直同时居中
+.app-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
