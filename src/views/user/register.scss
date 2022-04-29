@@ -1,0 +1,78 @@
+// .page {
+//   height: calc(100vh - 4.096rem);
+//   overflow: scroll;
+//   background-color: #f8f8f8;
+//   padding: .48rem .64rem 0;
+//   box-sizing: border-box;
+// }
+
+.title {
+  font-size: 1.472rem;
+  font-family: PingFang SC;
+  font-weight: 800;
+  color: #373737;
+  margin: 6.4rem 0 5.152rem 1.376rem;
+}
+
+.input-wrap {
+  width: 20.32rem;
+  margin: 0 auto;
+  height: 3.2rem;
+  background: #F4F4F4;
+  border-radius: 1.6rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.504rem;
+}
+
+.input {
+  border: 0;
+  outline: 0;
+  background: #F4F4F4;
+  font-size: .896rem;
+
+  &::placeholder {
+    color: #B4B4B4;
+  }
+}
+
+.code-wrap {}
+
+.code-btn {
+  font-size: .896rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #317AF6;
+  flex-shrink: 0;
+  margin-right: .896rem;
+}
+
+.line {
+  width: .064rem;
+  height: .896rem;
+  background: #B4B4B4;
+  margin: 0 1.024rem;
+}
+
+.img {
+  margin-left: 1.984rem;
+}
+
+.img1 {
+  width: .832rem;
+  height: 1.152rem;
+}
+
+.img2 {
+  width: .896rem;
+  height: 1.088rem;
+}
+
+.btn {
+  width: 14.4rem;
+  height: 3.2rem;
+  background: #317AF6;
+  border-radius: 50px;
+  margin: 4.416rem auto 0;
+  color: white;
+}

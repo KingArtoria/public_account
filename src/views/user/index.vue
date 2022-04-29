@@ -58,7 +58,7 @@ export default {
         {
           icon: 'http://account.channel.bdhuoke.com/img/user_bdzh@2x.png',
           title: '绑定火客账号',
-          path: ''
+          path: '/register'
         },
         {
           icon: 'http://account.channel.bdhuoke.com/img/user_lxkf@2x.png',
