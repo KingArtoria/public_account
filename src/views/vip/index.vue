@@ -30,10 +30,57 @@
       </div>
       <div class="content_2" v-if="active == 1">
         <div class="content_2_1">
-          <div class="content_2_1_1" @click="changeVipType(0)">普通会员</div>
-          <div class="content_2_1_2" @click="changeVipType(1)">超级会员</div>
-          <div class="content_2_1_2" @click="changeVipType(2)">企业会员</div>
+          <div :class="vipType == 0 ? 'content_2_1_1' : 'content_2_1_2'" @click="changeVipType(0)">普通会员</div>
+          <div :class="vipType == 1 ? 'content_2_1_1' : 'content_2_1_2'" @click="changeVipType(1)">超级会员</div>
+          <div :class="vipType == 2 ? 'content_2_1_1' : 'content_2_1_2'" @click="changeVipType(2)">企业会员</div>
           <div class="content_2_1_3" id="content_2_1_3" />
+        </div>
+        <div class="content_2_2">
+          <div class="content_2_2_1" :style="`background-image:url('${vipInfo[vipType].background}');background-repeat:no-repeat;background-size:100%`">
+            <div class="content_2_2_1_1">
+              <img src="" class="content_2_2_1_1_1" />
+              <div class="content_2_2_1_1_2">
+                <div class="content_2_2_1_1_2_1">我是名字</div>
+                <div class="content_2_2_1_1_2_2">时间</div>
+              </div>
+            </div>
+          </div>
+          <img src="http://39.106.208.234/pic/img_/fengx@2x.png" class="content_2_2_2" />
+          <div class="content_2_2_3">
+            <div class="content_2_2_3_1">{{ vipInfo[vipType].tag }}</div>
+            <div class="content_2_2_3_2">
+              <div class="content_2_2_3_2_1">{{ vipInfo[vipType].name }}</div>
+              <div class="content_2_2_3_2_2">
+                <div class="content_2_2_3_2_2_1">{{ vipInfo[vipType].price }}</div>
+                <div class="content_2_2_3_2_2_2">元</div>
+              </div>
+            </div>
+            <div class="content_2_2_3_3">{{ vipInfo[vipType].info }}</div>
+          </div>
+          <!-- <div class="content_2_2_4">选择支付方式</div> -->
+          <div class="content_2_2_5">{{ vipInfo[vipType].btnText }}</div>
+          <div class="content_2_2_6">
+            <van-checkbox v-model="checked" checked-color="#d4a74f" icon-size=".704rem" />
+            <div class="content_2_2_6_1">我已阅读开通VIP的</div>
+            <div class="content_2_2_6_2">相关协议</div>
+          </div>
+        </div>
+        <div class="content_2_3" />
+        <img src="http://account.channel.bdhuoke.com/img/txt_shytq@2x.png" class="content_2_4" />
+      </div>
+      <div class="content_3" v-if="active == 2">
+        <div class="content_3_1">
+          <div class="content_3_1_1">
+            <div class="content_3_1_1_1">未解锁</div>
+            <div class="content_3_1_1_2">
+              <div class="content_3_1_1_2_1">19,999</div>
+              <div class="content_3_1_1_2_2">元/年</div>
+            </div>
+          </div>
+          <img src="http://account.channel.bdhuoke.com/img/shenqingheika@2x.png" class="content_3_1_2" />
+        </div>
+        <div class="content_3_2">
+          
         </div>
       </div>
     </div>
@@ -41,7 +88,7 @@
 </template>
 
 <script>
-import { BUY_CONST } from '../../utils/const';
+import { BUY_CONST, VIP_INFO } from '../../utils/const';
 export default {
   data() {
     return {
@@ -50,7 +97,11 @@ export default {
       // TODO 购买信息数组
       buyInfo: [],
       // TODO 会员类型
-      vipType: '',
+      vipType: 1,
+      // TODO 会员信息
+      vipInfo: [],
+      // TODO 是否同意会员协议
+      checked: false,
     };
   },
   methods: {
@@ -72,9 +123,12 @@ export default {
     // ? 初始化参数
     initParams() {
       this.buyInfo = BUY_CONST;
+      this.vipInfo = VIP_INFO;
+      console.log(this.vipInfo[this.vipType].background);
     },
     // ? 切换会员类型
     changeVipType(type) {
+      this.vipType = type;
       switch (type) {
         case 0:
           document.getElementById('content_2_1_3').style.transform = 'translateX(-8rem)';
