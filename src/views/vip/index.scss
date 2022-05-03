@@ -375,5 +375,54 @@
         height: 1.088rem;
       }
     }
+    .content_3_2 {
+      background: #101010;
+      .content_3_2_1 {
+        margin-top: 2.56rem;
+        .content_3_2_1_1 {
+          width: 22.08rem;
+          height: 2.56rem;
+          background: #131313;
+          border: 0.032rem solid #cd9e71;
+          border-radius: 0.16rem;
+          margin: 0 auto;
+          margin-top: 1.28rem;
+          display: block;
+          color: #fff;
+          padding: 0 0.544rem;
+          box-sizing: border-box;
+        }
+        .content_3_2_1_2 {
+          width: 16.32rem;
+          height: 2.56rem;
+          background: linear-gradient(90deg, #ffebd3 0%, #e1ad7d 100%);
+          border-radius: 1.28rem;
+          margin: 0 auto;
+          margin-top: 1.984rem;
+          font-size: 0.96rem;
+          font-family: PingFang SC;
+          font-weight: 500;
+          color: #141414;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    .content_3_3 {
+      width: 22.08rem;
+      height: 30.048rem;
+      display: block;
+      margin: 0 auto;
+      margin-top: 4.256rem;
+    }
+    .content_3_4 {
+      width: 22.4rem;
+      height: 37.184rem;
+      display: block;
+      margin: 0 auto;
+      margin-top: 2.88rem;
+      padding-bottom: 4.96rem;
+    }
   }
 }

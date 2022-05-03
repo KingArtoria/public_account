@@ -80,8 +80,14 @@
           <img src="http://account.channel.bdhuoke.com/img/shenqingheika@2x.png" class="content_3_1_2" />
         </div>
         <div class="content_3_2">
-          
+          <div class="content_3_2_1">
+            <input type="text" class="content_3_2_1_1" placeholder="请输入您的称呼" />
+            <input type="number" class="content_3_2_1_1" placeholder="请输入您的联系方式" />
+            <div class="content_3_2_1_2">提交申请</div>
+          </div>
         </div>
+        <img src="http://account.channel.bdhuoke.com/img/heikaquanyi@2x.png" class="content_3_3" />
+        <img src="http://account.channel.bdhuoke.com/img/fuwuliuchen.png" class="content_3_4" />
       </div>
     </div>
   </div>
