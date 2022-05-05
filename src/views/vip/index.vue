@@ -66,7 +66,9 @@
           </div>
         </div>
         <div class="content_2_3" />
-        <img src="http://account.channel.bdhuoke.com/img/txt_shytq@2x.png" class="content_2_4" />
+        <img src="http://account.channel.bdhuoke.com/img/txt_shytq@2x.png" class="content_2_6" />
+        <img src="http://account.channel.bdhuoke.com/img/part1-hy@2x.png" class="content_2_4" />
+        <img src="http://account.channel.bdhuoke.com/img/part2-hy@2x.png" class="content_2_5" />
       </div>
       <div class="content_3" v-if="active == 2">
         <div class="content_3_1">
