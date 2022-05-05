@@ -16,6 +16,14 @@ export const reGetObtainInfo = data => {
     data: qs.stringify(data),
   });
 };
+/* 查看手机号 */
+export const getContactInfo = data => {
+  return request({
+    method: 'POST',
+    url: '/v41/Comprehensive/reGetContactInfo',
+    data: qs.stringify(data),
+  });
+};
 /* 获取短信验证码 */
 export const getSms = data => {
   return request({

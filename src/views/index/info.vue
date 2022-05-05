@@ -6,7 +6,7 @@
         <div class="content_1_2">{{ obtainInfo.addtime }}</div>
       </div>
       <div class="content_2">
-        <img :src="`https://admin.bdhuoke.com${obtainInfo.head}`" class="content_2_1" />
+        <img :src="`https://admin.bdhuoke.com${obtainInfo.head}`" class="content_2_1" v-if="obtainInfo.head" />
         <div class="content_2_2">
           <div class="content_2_2_1">
             <div class="content_2_2_1_1">{{ obtainInfo.nick_name }}</div>
