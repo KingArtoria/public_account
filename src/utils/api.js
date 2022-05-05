@@ -57,10 +57,10 @@ export const getOpenid = data => {
   });
 };
 /* 获取token */
-export const bind = data => {
+export const getToken = data => {
   return request({
     method: 'POST',
-    url: '/v41/Gzh/bind',
+    url: '/v41/Gzh/getToken',
     data: qs.stringify(data),
   });
 };
