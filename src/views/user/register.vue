@@ -50,13 +50,18 @@ export default {
         message: '正在提交...',
         forbidClick: true,
       });
+      console.log(this.OPEN_ID);
       bindAccount({
-        openid: '',
-        phone: this.formData.mobile,
+        openid: this.OPEN_ID,
+        phone: this.formData.phone,
         code: this.formData.code
-      }).then(() => {
-        this.$toast.clear()
-        this.$router.push('/success')
+      }).then((res) => {
+        if (res.code === -1) {
+          this.$toast(res.msg)
+        } else {
+          this.$toast.clear()
+          this.$router.push('/success')
+        }
       })
     },
     // 发送验证码
