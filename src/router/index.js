@@ -16,7 +16,7 @@ const routes = [
   { path: '/user', name: 'User', component: User },
   { path: '/register', name: 'Register', component: Register },
   { path: '/success', name: 'Success', component: Success },
-  { path: '/SuccessVip', name: 'Success2', component: Success2 },
+  { path: '/success_vip', name: 'Success2', component: Success2 },
 ]
 
 const router = new VueRouter({ routes, mode: 'history' })

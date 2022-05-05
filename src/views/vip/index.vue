@@ -22,7 +22,7 @@
               <div class="content_1_1_2_1_1">￥</div>
               <div class="content_1_1_2_1_2">{{ item.price }}</div>
             </div>
-            <div class="content_1_1_2_2" @click="buy(item)">购买</div>
+            <div class="content_1_1_2_2" @click="goodsorderadd(item)">购买</div>
           </div>
         </div>
         <img src="http://account.channel.bdhuoke.com/img/lxkf@2x.png" class="content_1_2" />
@@ -168,10 +168,8 @@ export default {
         Toast.success('申请成功');
       });
     },
-    // ? 购买
-    buy(item) {},
     // ? 创建订单
-    goodsorderadd() {
+    goodsorderadd(item) {
       this.createOrderParams.goods_id = item.id;
       goodsorderadd(this.createOrderParams).then(res => {
         this.wxpay(res.data);
@@ -194,6 +192,7 @@ export default {
           },
           res => {
             if (res.err_msg == 'get_brand_wcpay_request:ok') {
+              this.$route.push('/success_vip');
             }
           },
         );
