@@ -25,7 +25,7 @@ export default {
         getOpenid({ code }).then(res => {
           Vue.prototype.OPEN_ID = res.openid;
           getToken({ wxgzh_openid: res.openid }).then(res => {
-            if (res.code != 1) {
+            if (res.code == 1) {
               Vue.prototype.TOKEN = res.data;
             }
           });

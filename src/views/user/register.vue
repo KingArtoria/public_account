@@ -75,11 +75,11 @@ export default {
         phone: this.formData.phone,
         code: this.formData.code,
       }).then((res) => {
-        if (res.code === -1) {
+        if (res.code !== 1) {
           this.$toast(res.msg);
         } else {
           getToken({ wxgzh_openid: this.OPEN_ID }).then((res) => {
-            if (res.code != 1) {
+            if (res.code == 1) {
               Vue.prototype.TOKEN = res.data;
             }
           });

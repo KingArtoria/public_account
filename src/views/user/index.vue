@@ -89,8 +89,8 @@ export default {
         token: this.TOKEN
       }).then(res => {
         this.isBind = true;
-        res.data.head = 'https://appv41.bdhuoke.com/' + res.data.head
-        this.userInfo = res.data
+        res.head = 'https://appv41.bdhuoke.com/' + res.head
+        this.userInfo = res
       })
     }
   },
