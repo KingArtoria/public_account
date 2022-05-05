@@ -40,3 +40,11 @@ export const bindAccount = data => {
     data: qs.stringify(data),
   });
 };
+/* 黑卡申请 */
+export const applyForBlackCard = data => {
+  return request({
+    method: 'POST',
+    url: '/v41/Blackcard/applyForBlackCard',
+    data: qs.stringify(data),
+  });
+};
