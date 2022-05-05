@@ -22,7 +22,7 @@
               <div class="content_1_1_2_1_1">￥</div>
               <div class="content_1_1_2_1_2">{{ item.price }}</div>
             </div>
-            <div class="content_1_1_2_2">购买</div>
+            <div class="content_1_1_2_2" @click="buy(item)">购买</div>
           </div>
         </div>
         <img src="http://account.channel.bdhuoke.com/img/lxkf@2x.png" class="content_1_2" />
@@ -97,7 +97,7 @@
 
 <script>
 import { Toast } from 'vant';
-import { applyForBlackCard } from '../../utils/api';
+import { applyForBlackCard, goodsorderadd, pay_gzh } from '../../utils/api';
 import { BUY_CONST, VIP_INFO } from '../../utils/const';
 export default {
   data() {
@@ -114,6 +114,10 @@ export default {
       checked: false,
       // TODO 黑卡申请参数
       applyForBlackCardParams: { mobile: '', name: '' },
+      // TODO 创建订单参数
+      createOrderParams: {},
+      // TODO 微信支付参数
+      wechatPayParams: {},
     };
   },
   methods: {
@@ -136,6 +140,8 @@ export default {
     initParams() {
       this.buyInfo = BUY_CONST;
       this.vipInfo = VIP_INFO;
+      this.createOrderParams.paytype = 'wxpay';
+      this.createOrderParams.token = this.TOKEN;
     },
     // ? 切换会员类型
     changeVipType(type) {
@@ -160,6 +166,37 @@ export default {
           return;
         }
         Toast.success('申请成功');
+      });
+    },
+    // ? 购买
+    buy(item) {},
+    // ? 创建订单
+    goodsorderadd() {
+      this.createOrderParams.goods_id = item.id;
+      goodsorderadd(this.createOrderParams).then(res => {
+        this.wxpay(res.data);
+      });
+    },
+    // ? 微信支付
+    wxpay(data) {
+      this.wechatPayParams.order_sn = data.sn;
+      this.wechatPayParams.openid = this.OPEN_ID;
+      pay_gzh(this.wechatPayParams).then(res => {
+        WeixinJSBridge.invoke(
+          'getBrandWCPayRequest',
+          {
+            appId: res.data.appId,
+            timeStamp: res.data.timeStamp,
+            nonceStr: res.data.nonceStr,
+            package: res.data.package,
+            signType: res.data.signType,
+            paySign: res.data.paySign,
+          },
+          res => {
+            if (res.err_msg == 'get_brand_wcpay_request:ok') {
+            }
+          },
+        );
       });
     },
   },

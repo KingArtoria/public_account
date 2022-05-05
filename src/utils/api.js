@@ -72,3 +72,19 @@ export const getUserInfo = data => {
     data: qs.stringify(data),
   });
 };
+/* 创建订单 */
+export const goodsorderadd = data => {
+  return request({
+    method: 'POST',
+    url: '/v41/order/goodsorderadd',
+    data: qs.stringify(data),
+  });
+};
+/* 微信支付 */
+export const pay_gzh = data => {
+  return request({
+    method: 'POST',
+    url: '/v41/wxpay/pay_gzh',
+    data: qs.stringify(data),
+  });
+};

@@ -22,13 +22,20 @@ export const formatTime = (time, format = 'yyyy-MM-dd hh:mm:ss') => {
   }
   return format;
 }
-
 /**
  * 验证手机号格式
  * @param {*} phone 
  */
 export const validPhone = (phone) => {
   return /^1[0-9]{10}$/.test(phone)
+}
+// ? 获取当前秒
+export const getSecond = () => {
+  return new Date().getTime() / 1000
+}
+// ? 生成随机32位字符串加数字
+export const randomString = () => {
+  return Math.random().toString(36).substr(2, 32)
 }
 /**
  * 点击复制

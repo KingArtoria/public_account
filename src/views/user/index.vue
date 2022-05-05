@@ -3,7 +3,7 @@
     <div v-if="isBind" class="info app-img">
       <div class="top">
         <div class="top-left">
-          <img :src="userInfo.head" alt="" class="img" />
+          <img :src="userInfo.head" alt="" class="img"  v-if="userInfo.head"/>
         </div>
         <div class="top-right">
           <div class="title">
