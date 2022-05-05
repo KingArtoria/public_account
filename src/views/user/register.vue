@@ -2,29 +2,49 @@
   <div class="page">
     <p class="title">火客账户绑定</p>
     <div class="input-wrap">
-      <img src="http://account.channel.bdhuoke.com/img/user_shouji@2x.png" alt="" class="img img1">
+      <img
+        src="http://account.channel.bdhuoke.com/img/user_shouji@2x.png"
+        alt=""
+        class="img img1"
+      />
       <div class="line"></div>
-      <input v-model="formData.phone" type="text" placeholder="请输入手机号" class="input"
-        style="flex: 1;margin-right: 1.28rem;">
+      <input
+        v-model="formData.phone"
+        type="text"
+        placeholder="请输入手机号"
+        class="input"
+        style="flex: 1; margin-right: 1.28rem"
+      />
     </div>
     <div class="input-wrap code-wrap">
-      <img src="http://account.channel.bdhuoke.com/img/user_fangyu@2x.png" alt="" class="img img2">
+      <img
+        src="http://account.channel.bdhuoke.com/img/user_fangyu@2x.png"
+        alt=""
+        class="img img2"
+      />
       <div class="line"></div>
-      <input v-model="formData.code" type="text" placeholder="请输入验证码" class="input" style="width: 9rem">
+      <input
+        v-model="formData.code"
+        type="text"
+        placeholder="请输入验证码"
+        class="input"
+        style="width: 9rem"
+      />
       <div class="code-btn" @click="sendCode">{{ codeText }}</div>
     </div>
     <div class="btn app-flex-center" @click="submit">绑定</div>
   </div>
 </template>
 <script>
-import { validPhone } from '../../utils/index'
-import { getSms, bindAccount } from '../../utils/api'
+import { validPhone } from "../../utils/index";
+import { getSms, bindAccount, getToken } from "../../utils/api";
+import Vue from 'vue';
 export default {
   data() {
     return {
       formData: {
-        phone: '', // 手机号
-        code: '', // 验证码
+        phone: "", // 手机号
+        code: "", // 验证码
       },
       countDown: 60, // 验证码发送时间间隔
       sendLoading: false, // 是否已发送验证码
@@ -32,64 +52,68 @@ export default {
   },
   computed: {
     codeText() {
-      return this.sendLoading ? `已发送(${this.countDown})` : '获取验证码'
-    }
+      return this.sendLoading ? `已发送(${this.countDown})` : "获取验证码";
+    },
   },
   methods: {
     // 绑定手机号
     submit() {
       if (!validPhone(this.formData.phone)) {
-        this.$toast('手机号格式不正确')
-        return
+        this.$toast("手机号格式不正确");
+        return;
       }
       if (!this.formData.code) {
-        this.$toast('请填写验证码')
-        return
+        this.$toast("请填写验证码");
+        return;
       }
       this.$toast.loading({
-        message: '正在提交...',
+        message: "正在提交...",
         forbidClick: true,
       });
-      console.log(this.OPEN_ID);
       bindAccount({
         openid: this.OPEN_ID,
         phone: this.formData.phone,
-        code: this.formData.code
+        code: this.formData.code,
       }).then((res) => {
         if (res.code === -1) {
-          this.$toast(res.msg)
+          this.$toast(res.msg);
         } else {
-          this.$toast.clear()
-          this.$router.push('/success')
+          getToken({ wxgzh_openid: this.OPEN_ID }).then((res) => {
+            if (res.code != 1) {
+              Vue.prototype.TOKEN = res.data;
+            }
+          });
+          this.$toast.clear();
+          this.$router.push("/success");
         }
-      })
+      });
     },
     // 发送验证码
     sendCode() {
       if (this.sendLoading) {
-        return
+        return;
       }
       if (!validPhone(this.formData.phone)) {
-        this.$toast('手机号格式不正确')
-        return
+        this.$toast("手机号格式不正确");
+        return;
       }
-      this.sendLoading = true
+      this.sendLoading = true;
       const timer = setInterval(() => {
-        this.countDown--
+        this.countDown--;
         if (this.countDown === 0) {
-          clearInterval(timer)
-          this.sendLoading = false
-          this.countDown = 60
+          clearInterval(timer);
+          this.sendLoading = false;
+          this.countDown = 60;
         }
-      }, 1000)
+      }, 1000);
       getSms({
         mobile: this.formData.phone,
-        type: "gzh_bind"
+        type: "gzh_bind",
       }).then(() => {
-        this.$toast('验证码已发送')
-      })
-    }
-  }
+        this.$toast("验证码已发送");
+      });
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

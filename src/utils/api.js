@@ -64,4 +64,11 @@ export const getToken = data => {
     data: qs.stringify(data),
   });
 };
-
+/* 获取用户信息 */
+export const getUserInfo = data => {
+  return request({
+    method: 'POST',
+    url: '/v41/member/regetmemberinfo',
+    data: qs.stringify(data),
+  });
+};
