@@ -18,6 +18,7 @@
 </template>
 <script>
 import { validPhone } from '../../utils/index'
+import { getSms, bindAccount } from '../../utils/api'
 export default {
   data() {
     return {
@@ -49,10 +50,14 @@ export default {
         message: '正在提交...',
         forbidClick: true,
       });
-      setTimeout(() => {
+      bindAccount({
+        openid: '',
+        phone: this.formData.mobile,
+        code: this.formData.code
+      }).then(() => {
         this.$toast.clear()
         this.$router.push('/success')
-      }, 1000);
+      })
     },
     // 发送验证码
     sendCode() {
@@ -72,12 +77,12 @@ export default {
           this.countDown = 60
         }
       }, 1000)
-      // sendSms({
-      //   mobile: formData.value.phone,
-      //   type: "sign"
-      // }).then(() => {
-      //   showMsg('验证码已发送')
-      // })
+      getSms({
+        mobile: this.formData.phone,
+        type: "gzh_bind"
+      }).then(() => {
+        this.$toast('验证码已发送')
+      })
     }
   }
 };

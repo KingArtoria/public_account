@@ -16,3 +16,19 @@ export const reGetObtainInfo = data => {
     data: qs.stringify(data),
   });
 };
+/* 获取短信验证码 */
+export const getSms = data => {
+  return request({
+    method: 'POST',
+    url: '/v41/Alibabasms/sms',
+    data: qs.stringify(data),
+  });
+};
+/* 绑定账户 */
+export const bindAccount = data => {
+  return request({
+    method: 'POST',
+    url: '/v41/Gzh/bind',
+    data: qs.stringify(data),
+  });
+};

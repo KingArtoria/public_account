@@ -63,12 +63,12 @@ export default {
         {
           icon: 'http://account.channel.bdhuoke.com/img/user_lxkf@2x.png',
           title: '联系客服',
-          path: ''
+          path: 'contact'
         },
         {
           icon: 'http://account.channel.bdhuoke.com/img/user_gywm@2x.png',
           title: '关于我们',
-          path: ''
+          path: 'about'
         },
       ]
     };
