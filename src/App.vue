@@ -7,7 +7,7 @@
 <script>
 import Navigation from './components/navigation/index.vue';
 import Vue from 'vue';
-import { getOpenid } from './utils/api';
+import { getOpenid, getToken } from './utils/api';
 export default {
   methods: {
     // ? 初始化参数
@@ -24,6 +24,11 @@ export default {
       } else {
         getOpenid({ code }).then(res => {
           Vue.prototype.OPEN_ID = res.openid;
+          getToken({ wxgzh_openid: res.openid }).then(res => {
+            if (res.code != 1) {
+              Vue.prototype.TOKEN = res.data;
+            }
+          });
         });
       }
     },
