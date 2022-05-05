@@ -17,7 +17,9 @@
         </div>
       </div>
       <div class="bottom">
-        <span class="bottom-left">我的邀请码：{{ userInfo.Invitation_code }}</span>
+        <span class="bottom-left" @click="copy"
+          >账号识别码：{{ userInfo.Invitation_code }}</span
+        >
         <!-- <div classs="btn app-flex-center">编辑资料</div> -->
       </div>
     </div>
@@ -49,6 +51,7 @@
 
 <script>
 import { getUserInfo } from "../../utils/api";
+import { copyToClip } from "../../utils/index";
 export default {
   data() {
     return {
@@ -81,17 +84,21 @@ export default {
     nav(path) {
       this.$router.push(path);
     },
+    // 复制识别码到剪贴板
+    copy() {
+      copyToClip(this.userInfo.Invitation_code)
+    }
   },
   mounted() {
     if (this.TOKEN) {
       // 根据token获取用户信息
       getUserInfo({
-        token: this.TOKEN
-      }).then(res => {
+        token: this.TOKEN,
+      }).then((res) => {
         this.isBind = true;
-        res.head = 'https://appv41.bdhuoke.com/' + res.head
-        this.userInfo = res
-      })
+        res.head = "https://appv41.bdhuoke.com/" + res.head;
+        this.userInfo = res;
+      });
     }
   },
 };

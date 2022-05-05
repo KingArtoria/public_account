@@ -1,3 +1,4 @@
+import { Toast } from 'vant'
 // ? 时间格式化
 export const formatTime = (time, format = 'yyyy-MM-dd hh:mm:ss') => {
   if (!time) return '';
@@ -28,4 +29,20 @@ export const formatTime = (time, format = 'yyyy-MM-dd hh:mm:ss') => {
  */
 export const validPhone = (phone) => {
   return /^1[0-9]{10}$/.test(phone)
+}
+/**
+ * 点击复制
+ * @param {*} content 
+ * @param {*} messageInfo 
+ */
+ export const copyToClip = (content, messageInfo) => {
+  var aux = document.createElement('input');
+  aux.setAttribute('value', content);
+  document.body.appendChild(aux);
+  aux.select();
+  document.execCommand('copy');
+  document.body.removeChild(aux);
+  Toast({
+    message: '复制成功' || messageInfo
+  })
 }
