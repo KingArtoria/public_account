@@ -21,3 +21,11 @@ export const formatTime = (time, format = 'yyyy-MM-dd hh:mm:ss') => {
   }
   return format;
 }
+
+/**
+ * 验证手机号格式
+ * @param {*} phone 
+ */
+export const validPhone = (phone) => {
+  return /^1[0-9]{10}$/.test(phone)
+}

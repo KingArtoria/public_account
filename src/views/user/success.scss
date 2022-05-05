@@ -1,3 +1,26 @@
 .img {
-  margin-top: 4.832rem auto 0;
+  display: block;
+  margin: 4.832rem auto 0;
+  width: 6.432rem;
+  height: 6.432rem;
+}
+
+.text {
+  text-align: center;
+
+  .title {
+    font-size: 1.088rem;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #1B1B1B;
+    margin-top: .544rem;
+  }
+
+  .desc {
+    font-size: .832rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #656565;
+    margin-top: 1.792rem;
+  }
 }
