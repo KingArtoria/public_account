@@ -18,7 +18,7 @@
       </div>
       <div class="bottom">
         <span class="bottom-left">我的邀请码：123456</span>
-        <div class="btn app-flex-center">编辑资料</div>
+        <!-- <div classs="btn app-flex-center">编辑资料</div> -->
       </div>
     </div>
     <!-- 公众号剩余发布次数 -->
