@@ -34,9 +34,9 @@ export const TAB_CONST = [
 ]
 // ? 会员tab常量
 export const BUY_CONST = [
-  { name: "2次公众号项目发布机会", price: 198, title: "赠：1张火客首页超级置顶卡", tag: "有效期限：2周" },
-  { name: "10次公众号项目发布机会", price: 888, title: "赠：5张火客首页超级置顶卡", tag: "有效期限：1个月" },
-  { name: "100次公众号项目发布机会", price: 198, title: "赠：50张火客首页超级置顶卡", tag: "有效期限：1年" }
+  { name: "2次公众号项目发布机会", price: 198, title: "赠：1张火客首页超级置顶卡", tag: "有效期限：2周", id: 32 },
+  { name: "10次公众号项目发布机会", price: 888, title: "赠：5张火客首页超级置顶卡", tag: "有效期限：1个月", id: 33 },
+  { name: "100次公众号项目发布机会", price: 3888, title: "赠：50张火客首页超级置顶卡", tag: "有效期限：1年", id: 34 }
 ]
 // ? 会员权益常量
 export const VIP_CONST = [
