@@ -83,9 +83,9 @@
         </div>
         <div class="content_3_2">
           <div class="content_3_2_1">
-            <input type="text" class="content_3_2_1_1" placeholder="请输入您的称呼" />
-            <input type="number" class="content_3_2_1_1" placeholder="请输入您的联系方式" />
-            <div class="content_3_2_1_2">提交申请</div>
+            <input type="text" class="content_3_2_1_1" placeholder="请输入您的称呼" v-model="applyForBlackCardParams.name" />
+            <input type="number" class="content_3_2_1_1" placeholder="请输入您的联系方式" v-model="applyForBlackCardParams.mobile" />
+            <div class="content_3_2_1_2" @click="applyForBlackCard">提交申请</div>
           </div>
         </div>
         <img src="http://account.channel.bdhuoke.com/img/heikaquanyi@2x.png" class="content_3_3" />
@@ -96,6 +96,8 @@
 </template>
 
 <script>
+import { Toast } from 'vant';
+import { applyForBlackCard } from '../../utils/api';
 import { BUY_CONST, VIP_INFO } from '../../utils/const';
 export default {
   data() {
@@ -110,6 +112,8 @@ export default {
       vipInfo: [],
       // TODO 是否同意会员协议
       checked: false,
+      // TODO 黑卡申请参数
+      applyForBlackCardParams: { mobile: '', name: '' },
     };
   },
   methods: {
@@ -132,7 +136,6 @@ export default {
     initParams() {
       this.buyInfo = BUY_CONST;
       this.vipInfo = VIP_INFO;
-      console.log(this.vipInfo[this.vipType].background);
     },
     // ? 切换会员类型
     changeVipType(type) {
@@ -148,6 +151,16 @@ export default {
           document.getElementById('content_2_1_3').style.transform = 'translateX(8rem)';
           break;
       }
+    },
+    // ? 黑卡申请
+    applyForBlackCard() {
+      applyForBlackCard(this.applyForBlackCardParams).then(res => {
+        if (res.code != 1) {
+          Toast.fail(res.msg);
+          return;
+        }
+        Toast.success('申请成功');
+      });
     },
   },
   mounted() {
