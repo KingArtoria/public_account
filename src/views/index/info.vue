@@ -268,7 +268,7 @@
 </template>
 
 <script>
-import { reGetObtainInfo } from '../../utils/api';
+import { getContactInfo, reGetObtainInfo } from '../../utils/api';
 export default {
   data() {
     return {
@@ -290,6 +290,12 @@ export default {
         this.obtainInfo = res.data[0];
       });
     },
+    // ? 查看手机号
+    getContactInfo(){
+      getContactInfo().then(res=>{
+        
+      })
+    }
   },
   mounted() {
     // ? 初始化参数
