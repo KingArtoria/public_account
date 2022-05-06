@@ -38,10 +38,10 @@
         <div class="content_2_2">
           <div class="content_2_2_1" :style="`background-image:url('${vipInfo[vipType].background}');background-repeat:no-repeat;background-size:100%`">
             <div class="content_2_2_1_1">
-              <img src="" class="content_2_2_1_1_1" />
+              <img :src="userInfo.head" class="content_2_2_1_1_1" v-if="userInfo.head" />
               <div class="content_2_2_1_1_2">
-                <div class="content_2_2_1_1_2_1">我是名字</div>
-                <div class="content_2_2_1_1_2_2">时间</div>
+                <div class="content_2_2_1_1_2_1">{{ userInfo.nick_name }}</div>
+                <div class="content_2_2_1_1_2_2">{{ userInfo.vip_endtime }}</div>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@
             <div class="content_2_2_3_3">{{ vipInfo[vipType].info }}</div>
           </div>
           <!-- <div class="content_2_2_4">选择支付方式</div> -->
-          <div class="content_2_2_5">{{ vipInfo[vipType].btnText }}</div>
+          <div class="content_2_2_5" @click="goodsorderadd(vipInfo[vipType])">{{ vipInfo[vipType].btnText }}</div>
           <div class="content_2_2_6">
             <van-checkbox v-model="checked" checked-color="#d4a74f" icon-size=".704rem" />
             <div class="content_2_2_6_1">我已阅读开通VIP的</div>
@@ -97,7 +97,7 @@
 
 <script>
 import { Toast } from 'vant';
-import { applyForBlackCard, goodsorderadd, pay_gzh } from '../../utils/api';
+import { applyForBlackCard, getUserInfo, goodsorderadd, pay_gzh } from '../../utils/api';
 import { BUY_CONST, VIP_INFO } from '../../utils/const';
 export default {
   data() {
@@ -111,13 +111,15 @@ export default {
       // TODO 会员信息
       vipInfo: [],
       // TODO 是否同意会员协议
-      checked: false,
+      checked: true,
       // TODO 黑卡申请参数
       applyForBlackCardParams: { mobile: '', name: '' },
       // TODO 创建订单参数
       createOrderParams: {},
       // TODO 微信支付参数
       wechatPayParams: {},
+      // TODO 用户信息
+      userInfo: {},
     };
   },
   methods: {
@@ -183,12 +185,12 @@ export default {
         WeixinJSBridge.invoke(
           'getBrandWCPayRequest',
           {
-            appId: res.data.appId,
-            timeStamp: res.data.timeStamp,
-            nonceStr: res.data.nonceStr,
-            package: res.data.package,
-            signType: res.data.signType,
-            paySign: res.data.paySign,
+            appId: res.appId,
+            timeStamp: res.timeStamp,
+            nonceStr: res.nonceStr,
+            package: res.package,
+            signType: res.signType,
+            paySign: res.paySign,
           },
           res => {
             if (res.err_msg == 'get_brand_wcpay_request:ok') {
@@ -198,10 +200,20 @@ export default {
         );
       });
     },
+    // ? 获取用户信息
+    getUserInfo() {
+      getUserInfo({ token: this.TOKEN }).then(res => {
+        res.head = 'https://appv41.bdhuoke.com/' + res.head;
+        res.vip_endtime = vip_endtime == 0 ? '暂未开通' : res.vip_endtime;
+        this.userInfo = res;
+      });
+    },
   },
   mounted() {
     // ? 初始化参数
     this.initParams();
+    // ? 获取用户信息
+    this.getUserInfo();
   },
 };
 </script>

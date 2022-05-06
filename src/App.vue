@@ -44,7 +44,7 @@ export default {
     // ? 初始化参数
     this.initParams();
     // ? 获取code
-    this.getCode();
+    // this.getCode();
   },
   components: { Navigation },
 };
