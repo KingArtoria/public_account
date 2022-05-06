@@ -89,8 +89,9 @@ export default {
   methods: {
     // 路由跳转
     nav(path) {
-      if (path === 'contact') return (this.showDialog = true);
-      this.$router.push(path);
+      if (path === 'contact') this.showDialog = true;
+      else if (path === 'about') window.location.href = 'http://kd.bdhuoke.com';
+      else this.$router.push(path);
     },
     // 复制识别码到剪贴板
     copy() {
