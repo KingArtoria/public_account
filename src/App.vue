@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navigation v-if="url != '/details' && url != '/function' && url != '/publish'" />
+    <Navigation v-if="url != '/details' && url != '/function' && url != '/publish' && url != '/guarantee' && url != '/public'" />
     <router-view :style="isPadding ? 'padding-bottom: 4.096rem' : ''" />
   </div>
 </template>
@@ -50,12 +50,12 @@ export default {
     // ? 初始化参数
     this.initParams();
     // ? 获取code
-    // this.getCode();
+    this.getCode();
   },
   watch: {
     $route(to, from) {
       this.url = to.path;
-      if (to.path == '/details' || to.path == '/function' || to.path == '/publish') {
+      if (to.path == '/details' || to.path == '/function' || to.path == '/publish' || to.path == '/guarantee' || to.path == '/public') {
         this.isPadding = false;
       }
     },

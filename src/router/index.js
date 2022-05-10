@@ -12,6 +12,8 @@ const Success2 = () => import('../views/vip/success.vue')
 const Details = () => import('../views/info/index.vue')
 const Function = () => import('../views/introduce/function.vue')
 const Publish = () => import('../views/introduce/publish.vue')
+const Guarantee = () => import('../views/introduce/guarantee.vue')
+const Public = () => import('../views/introduce/public.vue')
 const routes = [
   { path: '/', name: 'Index', component: Index },
   { path: '/info', name: 'Info', component: Info },
@@ -23,6 +25,8 @@ const routes = [
   { path: '/details', name: 'Details', component: Details },
   { path: '/function', name: 'Function', component: Function },
   { path: '/publish', name: 'Publish', component: Publish },
+  { path: '/guarantee', name: 'Guarantee', component: Guarantee },
+  { path: '/public', name: 'Public', component: Public },
 ]
 
 const router = new VueRouter({ routes, mode: 'history' })
