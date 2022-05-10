@@ -1,8 +1,8 @@
 <template>
   <div class="navigation">
     <div v-for="item in tabbar" :key="item.path" class="navigation_1" @click="go(item.path)">
-      <img :src="item.path === $route.fullPath ? item.activeImg : item.img" class="navigation_1_1" />
-      <div class="navigation_1_2" :class="{active: item.path === $route.fullPath}">{{ item.title }}</div>
+      <img :src="item.path === $route.path ? item.activeImg : item.img" class="navigation_1_1" />
+      <div class="navigation_1_2" :class="{active: item.path === $route.path}">{{ item.title }}</div>
     </div>
   </div>
 </template>
