@@ -40,8 +40,8 @@
             <div class="content_2_2_1_1">
               <img :src="userInfo.head" class="content_2_2_1_1_1" v-if="userInfo.head" />
               <div class="content_2_2_1_1_2">
-                <div class="content_2_2_1_1_2_1">{{ userInfo.nick_name }}</div>
-                <div class="content_2_2_1_1_2_2">{{ userInfo.vip_endtime }}</div>
+                <div class="content_2_2_1_1_2_1" :style="`color:${vipInfo[vipType].color}`">{{ userInfo.nick_name }}</div>
+                <div class="content_2_2_1_1_2_2" :style="`color:${vipInfo[vipType].color}`">{{ userInfo.vip_endtime }}</div>
               </div>
             </div>
           </div>
@@ -99,6 +99,7 @@
 import { Toast } from 'vant';
 import { applyForBlackCard, getUserInfo, goodsorderadd, pay_gzh } from '../../utils/api';
 import { BUY_CONST, VIP_INFO } from '../../utils/const';
+import { formatTime } from '../../utils';
 export default {
   data() {
     return {
@@ -203,13 +204,18 @@ export default {
     // ? 获取用户信息
     getUserInfo() {
       getUserInfo({ token: this.TOKEN }).then(res => {
-        res.head = 'https://appv41.bdhuoke.com/' + res.head;
-        res.vip_endtime = vip_endtime == 0 ? '暂未开通' : res.vip_endtime;
+        res.head = 'https://admin.bdhuoke.com/' + res.head;
+        res.vip_endtime = res.vip_endtime == 0 ? '暂未开通' : res.vip_endtime;
+        if (res.vip_endtime > 0) {
+          res.vip_endtime = formatTime(res.vip_endtime * 1000, 'yyyy-MM-dd');
+        }
         this.userInfo = res;
+        console.log(this.userInfo);
       });
     },
   },
   mounted() {
+    document.title = '会员中心';
     // ? 初始化参数
     this.initParams();
     // ? 获取用户信息

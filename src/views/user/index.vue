@@ -99,11 +99,12 @@ export default {
     },
   },
   mounted() {
+    document.title = '个人中心';
     if (this.TOKEN) {
       // 根据token获取用户信息
       getUserInfo({ token: this.TOKEN }).then(res => {
         this.isBind = true;
-        res.head = 'https://appv41.bdhuoke.com/' + res.head;
+        res.head = 'https://admin.bdhuoke.com/' + res.head;
         this.userInfo = res;
       });
       getUserSendNum({ token: this.TOKEN }).then(res => {

@@ -105,6 +105,7 @@ export default {
     },
   },
   mounted() {
+    document.title = '火客';
     // ? 初始化参数
     this.initParams();
     // ? 资源对接查询

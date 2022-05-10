@@ -79,9 +79,9 @@ export const VIP_CONST = [
 ]
 // ? 会员信息常量
 export const VIP_INFO = [
-  { background: 'http://39.106.208.234/pic/img_/huiyuan_kpthy.png', info: '送道具卡(置顶卡,变色卡)', price: 998, tag: "超值优惠", btnText: '限时特惠98元开通', name: "12个月会员", id: 27 },
-  { background: 'http://39.106.208.234/pic/img_/huiyuan_kchaojhuiy.png', info: '送道具卡(置顶卡,变色卡,超级置顶卡)', price: 1998, tag: "本站力推", btnText: '限时特惠1998元开通', name: "12个月会员", id: 28 },
-  { background: 'http://39.106.208.234/pic/img_/huiyuan_kqyhyuan.png', info: '送道具卡(置顶卡*1,变色卡*1)', price: 3998, tag: "企业专享", btnText: '限时特惠3998元开通', name: "12个月会员", id: 29 },
+  { background: 'http://39.106.208.234/pic/img_/huiyuan_kpthy.png', info: '送道具卡(置顶卡,变色卡)', price: 998, tag: "超值优惠", btnText: '限时特惠98元开通', name: "12个月会员", id: 27, color: '#9b660a' },
+  { background: 'http://39.106.208.234/pic/img_/huiyuan_kchaojhuiy.png', info: '送道具卡(置顶卡,变色卡,超级置顶卡)', price: 1998, tag: "本站力推", btnText: '限时特惠1998元开通', name: "12个月会员", id: 28, color: '#FFFFFF' },
+  { background: 'http://39.106.208.234/pic/img_/huiyuan_kqyhyuan.png', info: '送道具卡(置顶卡*1,变色卡*1)', price: 3998, tag: "企业专享", btnText: '限时特惠3998元开通', name: "12个月会员", id: 29, color: '#FFD193' },
 ]
 // ? 项目信息常量
 export const PROJECT_INFO = [
