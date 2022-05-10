@@ -22,6 +22,9 @@
       font-weight: 500;
       color: #282828;
       line-height: 1;
+      &.active {
+        color: #167fff;
+      }
     }
   }
 }
