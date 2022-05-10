@@ -129,7 +129,7 @@
           </div>
           <div class="content_4_1_2">联系方式点击可复制或拨打</div>
         </div>
-        <div class="content_4_2" v-if="!obtainInfo.lock">
+        <div class="content_4_2" v-if="!obtainInfo.lock" @click="getContactInfo">
           <div class="content_4_2_1">点击查看联系方式</div>
         </div>
         <div class="content_4_3" v-else>
@@ -291,11 +291,9 @@ export default {
       });
     },
     // ? 查看手机号
-    getContactInfo(){
-      getContactInfo().then(res=>{
-        
-      })
-    }
+    getContactInfo() {
+      window.location.href = 'http://accountXZ.channel.bdhuoke.com';
+    },
   },
   mounted() {
     // ? 初始化参数

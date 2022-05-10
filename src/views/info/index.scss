@@ -1,0 +1,40 @@
+.content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url('http://account.channel.bdhuoke.com/img/gzh_fbbj@2x.png') no-repeat;
+  background-size: 100%;
+  .content_1 {
+    width: 17.728rem;
+    font-size: 0.96rem;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #000000;
+    line-height: 1.536rem;
+    position: absolute;
+    top: 17.664rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    word-break: break-all;
+  }
+  .content_2 {
+    width: 17.728rem;
+    font-size: 0.96rem;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #000000;
+    line-height: 1.536rem;
+    left: 3.104rem;
+    bottom: 15rem;
+    word-break: break-all;
+    position: absolute;
+  }
+  .content_3 {
+    width: 5.024rem;
+    height: 5.024rem;
+    right: 2.24rem;
+    bottom: 7.5rem;
+    position: absolute;
+  }
+}

@@ -9,6 +9,9 @@ const User = () => import('../views/user/index.vue')
 const Register = () => import('../views/user/register.vue')
 const Success = () => import('../views/user/success.vue')
 const Success2 = () => import('../views/vip/success.vue')
+const Details = () => import('../views/info/index.vue')
+const Function = () => import('../views/introduce/function.vue')
+const Publish = () => import('../views/introduce/publish.vue')
 const routes = [
   { path: '/', name: 'Index', component: Index },
   { path: '/info', name: 'Info', component: Info },
@@ -17,6 +20,9 @@ const routes = [
   { path: '/register', name: 'Register', component: Register },
   { path: '/success', name: 'Success', component: Success },
   { path: '/success_vip', name: 'Success2', component: Success2 },
+  { path: '/details', name: 'Details', component: Details },
+  { path: '/function', name: 'Function', component: Function },
+  { path: '/publish', name: 'Publish', component: Publish },
 ]
 
 const router = new VueRouter({ routes, mode: 'history' })

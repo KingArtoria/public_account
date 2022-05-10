@@ -55,13 +55,13 @@
 </template>
 
 <script>
-import { getUserInfo } from '../../utils/api';
+import { getUserInfo, getUserSendNum } from '../../utils/api';
 import { copyToClip } from '../../utils/index';
 export default {
   data() {
     return {
       // 剩余发布次数
-      surplusCount: 5,
+      surplusCount: 'X',
       // 菜单
       menus: [
         {
@@ -101,12 +101,13 @@ export default {
   mounted() {
     if (this.TOKEN) {
       // 根据token获取用户信息
-      getUserInfo({
-        token: this.TOKEN,
-      }).then(res => {
+      getUserInfo({ token: this.TOKEN }).then(res => {
         this.isBind = true;
         res.head = 'https://appv41.bdhuoke.com/' + res.head;
         this.userInfo = res;
+      });
+      getUserSendNum({ token: this.TOKEN }).then(res => {
+        this.surplusCount = res.data;
       });
     }
   },

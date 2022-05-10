@@ -83,3 +83,7 @@ export const VIP_INFO = [
   { background: 'http://39.106.208.234/pic/img_/huiyuan_kchaojhuiy.png', info: '送道具卡(置顶卡,变色卡,超级置顶卡)', price: 1998, tag: "本站力推", btnText: '限时特惠1998元开通', name: "12个月会员", id: 28 },
   { background: 'http://39.106.208.234/pic/img_/huiyuan_kqyhyuan.png', info: '送道具卡(置顶卡*1,变色卡*1)', price: 3998, tag: "企业专享", btnText: '限时特惠3998元开通', name: "12个月会员", id: 29 },
 ]
+// ? 项目信息常量
+export const PROJECT_INFO = [
+  { id: 1, title: "测试项目", price: '月结', img: "http://39.106.208.234/pic/img_/rwmsw.png" }
+]

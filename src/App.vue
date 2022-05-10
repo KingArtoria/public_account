@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Navigation />
-    <router-view style="padding-bottom: 4.096rem" />
+    <Navigation v-if="url != '/details' && url != '/function' && url != '/publish'" />
+    <router-view :style="isPadding ? 'padding-bottom: 4.096rem' : ''" />
   </div>
 </template>
 <script>
@@ -9,6 +9,12 @@ import Navigation from './components/navigation/index.vue';
 import Vue from 'vue';
 import { getOpenid, getToken } from './utils/api';
 export default {
+  data() {
+    return {
+      url: '',
+      isPadding: false,
+    };
+  },
   methods: {
     // ? 初始化参数
     initParams() {
@@ -45,6 +51,14 @@ export default {
     this.initParams();
     // ? 获取code
     // this.getCode();
+  },
+  watch: {
+    $route(to, from) {
+      this.url = to.path;
+      if (to.path == '/details' || to.path == '/function' || to.path == '/publish') {
+        this.isPadding = false;
+      }
+    },
   },
   components: { Navigation },
 };

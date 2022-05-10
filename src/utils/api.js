@@ -88,3 +88,19 @@ export const pay_gzh = data => {
     data: qs.stringify(data),
   });
 };
+/* 获取剩余发布次数 */
+export const getUserSendNum = data => {
+  return request({
+    method: 'POST',
+    url: '/v41/Gzh/getUserSendNum',
+    data: qs.stringify(data),
+  });
+};
+/* 发布内容详情 */
+export const getInfo = data => {
+  return request({
+    method: 'POST',
+    url: '/v41/Gzh/getInfo',
+    data: qs.stringify(data),
+  });
+};
