@@ -51,7 +51,6 @@ export default {
     this.initParams();
     // 获取路由
     setTimeout(() => {
-      let url = this.$route.path;
       if (this.url != '/details' && this.url != '/function' && this.url != '/publish' && this.url != '/guarantee' && this.url != '/public') {
         // this.getCode();
       }

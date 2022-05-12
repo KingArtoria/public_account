@@ -7,16 +7,16 @@ export const CAROUSEL_CONST = [
 ]
 // ? 宫格1常量
 export const GRID_CONST = [
-  { title: "广告甲方", img: `http://account.channel.bdhuoke.com/img/sy_ggjf@2x.png` },
-  { title: "流量乙方", img: `http://account.channel.bdhuoke.com/img/sy_llyf@2x.png` },
-  { title: "海外业务", img: `http://account.channel.bdhuoke.com/img/sy_chuhyw@2x.png` },
-  { title: "优质货源", img: `http://account.channel.bdhuoke.com/img/sy_xsqd@2x.png` },
-  { title: "销售渠道", img: `http://account.channel.bdhuoke.com/img/sy_zyhh@2x.png` },
-  { title: "资源互换", img: `http://account.channel.bdhuoke.com/img/sy_llhh@2x.png` },
-  { title: "流量互换", img: `http://account.channel.bdhuoke.com/img/sy_zsjm@2x.png` },
-  { title: "招商加盟", img: `http://account.channel.bdhuoke.com/img/sy_ggjf@2x.png` },
-  { title: "线下广告", img: `http://account.channel.bdhuoke.com/img/sy_xxgg@2x.png` },
-  { title: "线下场地", img: `http://account.channel.bdhuoke.com/img/sy_xxcd@2x.png` },
+  { title: "广告甲方", img: `http://account.channel.bdhuoke.com/img/sy_ggjf@2x.png`, type: 1 },
+  { title: "流量乙方", img: `http://account.channel.bdhuoke.com/img/sy_llyf@2x.png`, type: 2 },
+  { title: "海外业务", img: `http://account.channel.bdhuoke.com/img/sy_chuhyw@2x.png`, type: 11 },
+  { title: "优质货源", img: `http://account.channel.bdhuoke.com/img/sy_xsqd@2x.png`, type: 3 },
+  { title: "销售渠道", img: `http://account.channel.bdhuoke.com/img/sy_zyhh@2x.png`, type: 4 },
+  { title: "资源互换", img: `http://account.channel.bdhuoke.com/img/sy_llhh@2x.png`, type: 5 },
+  { title: "流量互换", img: `http://account.channel.bdhuoke.com/img/sy_zsjm@2x.png`, type: 6 },
+  { title: "招商加盟", img: `http://account.channel.bdhuoke.com/img/sy_ggjf@2x.png`, type: 7 },
+  { title: "线下广告", img: `http://account.channel.bdhuoke.com/img/sy_xxgg@2x.png`, type: 8 },
+  { title: "线下场地", img: `http://account.channel.bdhuoke.com/img/sy_xxcd@2x.png`, type: 9 },
 ]
 // ? tab常量
 export const TAB_CONST = [

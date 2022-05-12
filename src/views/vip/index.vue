@@ -207,7 +207,7 @@ export default {
         res.head = 'https://admin.bdhuoke.com/' + res.head;
         res.vip_endtime = res.vip_endtime == 0 ? '暂未开通' : res.vip_endtime;
         if (res.vip_endtime > 0) {
-          res.vip_endtime = formatTime(res.vip_endtime * 1000, 'yyyy-MM-dd');
+          res.vip_endtime = `到期时间：${formatTime(res.vip_endtime * 1000, 'yyyy-MM-dd')}`;
         }
         this.userInfo = res;
         console.log(this.userInfo);

@@ -91,7 +91,13 @@ export default {
     nav(path) {
       if (path === 'contact') this.showDialog = true;
       else if (path === 'about') window.location.href = 'http://kd.bdhuoke.com';
-      else this.$router.push(path);
+      else {
+        if (this.TOKEN) {
+          this.$toast('您已成功绑定过账号');
+        } else {
+          this.$router.push(path);
+        }
+      }
     },
     // 复制识别码到剪贴板
     copy() {

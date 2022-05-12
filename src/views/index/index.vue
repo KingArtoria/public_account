@@ -12,7 +12,7 @@
         <div class="content_1_2">
           <van-grid :column-num="5" :border="false">
             <van-grid-item v-for="(item, index) in grid1" :key="index">
-              <div class="content_1_2_1">
+              <div class="content_1_2_1" @click="goItemList(item)">
                 <van-image :src="item.img" />
                 <div class="content_1_2_1_1">{{ item.title }}</div>
               </div>
@@ -102,6 +102,9 @@ export default {
       this.recommendParams.page = 1;
       this.indexData = [];
       this.getResponses();
+    },
+    goItemList(item) {
+      this.$router.push(`/item?type=${item.type}`);
     },
   },
   mounted() {
