@@ -1,6 +1,6 @@
 import request from './request';
 import qs from 'qs';
-/* 推荐接口 */
+/* 资源对接 */
 export const getResponses = data => {
   return request({
     method: 'POST',

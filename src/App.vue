@@ -49,8 +49,12 @@ export default {
   mounted() {
     // ? 初始化参数
     this.initParams();
-    // ? 获取code
-    this.getCode();
+    // 获取路由
+    setTimeout(() => {
+      if (this.url != '/details' && this.url != '/function' && this.url != '/publish' && this.url != '/guarantee' && this.url != '/public') {
+        // this.getCode();
+      }
+    }, 200);
   },
   watch: {
     $route(to, from) {

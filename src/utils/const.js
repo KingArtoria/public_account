@@ -7,16 +7,16 @@ export const CAROUSEL_CONST = [
 ]
 // ? 宫格1常量
 export const GRID_CONST = [
-  { title: "广告甲方", img: `http://account.channel.bdhuoke.com/img/sy_ggjf@2x.png` },
-  { title: "流量乙方", img: `http://account.channel.bdhuoke.com/img/sy_llyf@2x.png` },
-  { title: "海外业务", img: `http://account.channel.bdhuoke.com/img/sy_chuhyw@2x.png` },
-  { title: "优质货源", img: `http://account.channel.bdhuoke.com/img/sy_xsqd@2x.png` },
-  { title: "销售渠道", img: `http://account.channel.bdhuoke.com/img/sy_zyhh@2x.png` },
-  { title: "资源互换", img: `http://account.channel.bdhuoke.com/img/sy_llhh@2x.png` },
-  { title: "流量互换", img: `http://account.channel.bdhuoke.com/img/sy_zsjm@2x.png` },
-  { title: "招商加盟", img: `http://account.channel.bdhuoke.com/img/sy_ggjf@2x.png` },
-  { title: "线下广告", img: `http://account.channel.bdhuoke.com/img/sy_xxgg@2x.png` },
-  { title: "线下场地", img: `http://account.channel.bdhuoke.com/img/sy_xxcd@2x.png` },
+  { title: "广告甲方", img: `http://account.channel.bdhuoke.com/img/sy_ggjf@2x.png`, type: 1 },
+  { title: "流量乙方", img: `http://account.channel.bdhuoke.com/img/sy_llyf@2x.png`, type: 2 },
+  { title: "海外业务", img: `http://account.channel.bdhuoke.com/img/sy_chuhyw@2x.png`, type: 11 },
+  { title: "优质货源", img: `http://account.channel.bdhuoke.com/img/sy_xsqd@2x.png`, type: 3 },
+  { title: "销售渠道", img: `http://account.channel.bdhuoke.com/img/sy_zyhh@2x.png`, type: 4 },
+  { title: "资源互换", img: `http://account.channel.bdhuoke.com/img/sy_llhh@2x.png`, type: 5 },
+  { title: "流量互换", img: `http://account.channel.bdhuoke.com/img/sy_zsjm@2x.png`, type: 6 },
+  { title: "招商加盟", img: `http://account.channel.bdhuoke.com/img/sy_ggjf@2x.png`, type: 7 },
+  { title: "线下广告", img: `http://account.channel.bdhuoke.com/img/sy_xxgg@2x.png`, type: 8 },
+  { title: "线下场地", img: `http://account.channel.bdhuoke.com/img/sy_xxcd@2x.png`, type: 9 },
 ]
 // ? tab常量
 export const TAB_CONST = [
@@ -79,9 +79,9 @@ export const VIP_CONST = [
 ]
 // ? 会员信息常量
 export const VIP_INFO = [
-  { background: 'http://39.106.208.234/pic/img_/huiyuan_kpthy.png', info: '送道具卡(置顶卡,变色卡)', price: 998, tag: "超值优惠", btnText: '限时特惠98元开通', name: "12个月会员", id: 27 },
-  { background: 'http://39.106.208.234/pic/img_/huiyuan_kchaojhuiy.png', info: '送道具卡(置顶卡,变色卡,超级置顶卡)', price: 1998, tag: "本站力推", btnText: '限时特惠1998元开通', name: "12个月会员", id: 28 },
-  { background: 'http://39.106.208.234/pic/img_/huiyuan_kqyhyuan.png', info: '送道具卡(置顶卡*1,变色卡*1)', price: 3998, tag: "企业专享", btnText: '限时特惠3998元开通', name: "12个月会员", id: 29 },
+  { background: 'http://39.106.208.234/pic/img_/huiyuan_kpthy.png', info: '送道具卡(置顶卡,变色卡)', price: 998, tag: "超值优惠", btnText: '限时特惠98元开通', name: "12个月会员", id: 27, color: '#9b660a' },
+  { background: 'http://39.106.208.234/pic/img_/huiyuan_kchaojhuiy.png', info: '送道具卡(置顶卡,变色卡,超级置顶卡)', price: 1998, tag: "本站力推", btnText: '限时特惠1998元开通', name: "12个月会员", id: 28, color: '#FFFFFF' },
+  { background: 'http://39.106.208.234/pic/img_/huiyuan_kqyhyuan.png', info: '送道具卡(置顶卡*1,变色卡*1)', price: 3998, tag: "企业专享", btnText: '限时特惠3998元开通', name: "12个月会员", id: 29, color: '#FFD193' },
 ]
 // ? 项目信息常量
 export const PROJECT_INFO = [
