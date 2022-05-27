@@ -12,12 +12,12 @@ export default {
   data() {
     return {
       tabbar: [
-        {
-          title: '首页',
-          img: 'http://account.channel.bdhuoke.com/img/shouye_1@2x.png',
-          activeImg: 'http://account.channel.bdhuoke.com/img/shouye_2@2x.png',
-          path: '/'
-        },
+        // {
+        //   title: '首页',
+        //   img: 'http://account.channel.bdhuoke.com/img/shouye_1@2x.png',
+        //   activeImg: 'http://account.channel.bdhuoke.com/img/shouye_2@2x.png',
+        //   path: '/'
+        // },
         {
           title: '会员',
           img: 'http://account.channel.bdhuoke.com/img/huiyuan-1@2x.png',

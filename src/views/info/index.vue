@@ -3,7 +3,6 @@
     <div class="content">
       <div class="content_1">{{ info.info }}</div>
       <div class="content_2">{{ info.settcycle_id }}</div>
-      <img :src="info.pic" class="content_3" />
     </div>
   </div>
 </template>

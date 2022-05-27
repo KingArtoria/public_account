@@ -15,7 +15,7 @@ const Publish = () => import('../views/introduce/publish.vue')
 const Guarantee = () => import('../views/introduce/guarantee.vue')
 const Public = () => import('../views/introduce/public.vue')
 const routes = [
-  { path: '/', name: 'Index', component: Index },
+  { path: '/', name: 'Index', redirect: '/vip', component: Vip },
   { path: '/info', name: 'Info', component: Info },
   { path: '/vip', name: 'Vip', component: Vip },
   { path: '/user', name: 'User', component: User },
