@@ -36,7 +36,7 @@ export default {
   methods: {
     // ? 路由跳转
     go(path) {
-      if (path === '/vip') return this.$toast('请先进行火客账号绑定');
+      if (path === '/vip' && !this.TOKEN) return this.$toast('请先进行火客账号绑定');
       this.$router.push(path);
     },
   },

@@ -8,7 +8,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    document.title = '公众号介绍';
+  },
+};
 </script>
 
 <style lang="scss" scoped>

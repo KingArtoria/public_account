@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Navigation v-if="url != '/details' && url != '/function' && url != '/publish' && url != '/guarantee' && url != '/public'" />
+    <Navigation
+      v-if="url != '/details' && url != '/function' && url != '/publish' && url != '/guarantee' && url != '/public'" />
     <router-view :style="isPadding ? 'padding-bottom: 4.096rem' : ''" />
   </div>
 </template>
@@ -52,7 +53,7 @@ export default {
     // 获取路由
     setTimeout(() => {
       if (this.url != '/details' && this.url != '/function' && this.url != '/publish' && this.url != '/guarantee' && this.url != '/public') {
-        // this.getCode();
+        this.getCode();
       }
     }, 200);
   },

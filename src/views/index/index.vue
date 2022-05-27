@@ -34,6 +34,15 @@
         <van-loading size=".768rem" color="#0094ff" vertical>加载中...</van-loading>
       </div>
     </div>
+    <van-overlay :show="show">
+      <div class="wrapper" @click.stop>
+        <div class="wrapper_1">
+          <img src="http://account.channel.bdhuoke.com/img/bangdzh@2x.png" class="wrapper_1_1" />
+          <img src="http://account.channel.bdhuoke.com/img/close@2x.png" class="wrapper_1_2" @click="show = false" />
+          <div class="wrapper_1_3" @click="goBindAccount">去绑定</div>
+        </div>
+      </div>
+    </van-overlay>
   </div>
 </template>
 
@@ -61,9 +70,15 @@ export default {
       loading: false,
       // TODO 当前路由
       currentRoute: '',
+      // 展示遮罩
+      show: false,
     };
   },
   methods: {
+    // ? 前往绑定账号
+    goBindAccount() {
+      this.$router.push('/register');
+    },
     // ? 初始化参数
     initParams() {
       this.swipe = CAROUSEL_CONST;
@@ -71,6 +86,9 @@ export default {
       this.tabs = TAB_CONST;
       this.recommendParams.type = this.current + 1;
       this.currentRoute = this.$route.path;
+      setTimeout(() => {
+        if (!this.TOKEN) this.show = true;
+      }, 1000);
     },
     // ? 资源对接查询
     getResponses() {
