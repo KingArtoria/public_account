@@ -9,7 +9,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    document.title = '火客功能介绍';
+  },
+};
 </script>
 
 <style lang="scss" scoped>

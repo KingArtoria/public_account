@@ -25,6 +25,7 @@ export default {
     },
   },
   mounted() {
+    document.title = '项目详情';
     // 查看资源详情
     this.getInfo();
   },

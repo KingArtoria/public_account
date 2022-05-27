@@ -10,7 +10,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    document.title = '担保服务';
+  },
+};
 </script>
 
 <style lang="scss" scoped>

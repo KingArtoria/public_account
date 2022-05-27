@@ -13,7 +13,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    document.title = '项目发布';
+  },
+};
 </script>
 
 <style lang="scss" scoped>
