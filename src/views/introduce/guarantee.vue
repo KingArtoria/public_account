@@ -4,7 +4,7 @@
       <img src="http://account.channel.bdhuoke.com/img/dbfw_part1@2x.png" class="content_1" />
       <img src="http://account.channel.bdhuoke.com/img/dbfw_part2@2x.png" class="content_1" />
       <img src="http://account.channel.bdhuoke.com/img/dbfw_part3@2x.png" class="content_1" />
-      <img src="http://account.channel.bdhuoke.com/img/dbfw_part4@2x.png" class="content_1" />
+      <!-- <img src="http://account.channel.bdhuoke.com/img/dbfw_part4@2x.png" class="content_1" /> -->
     </div>
   </div>
 </template>

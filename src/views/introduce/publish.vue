@@ -7,7 +7,7 @@
       <img src="http://account.channel.bdhuoke.com/img/PART4@2x.png" class="content_1" />
       <img src="http://account.channel.bdhuoke.com/img/PART5@2x.png" class="content_1" />
       <img src="http://account.channel.bdhuoke.com/img/PART6@2x.png" class="content_1" />
-      <img src="http://account.channel.bdhuoke.com/img/PART17@2x.png" class="content_1" />
+      <!-- <img src="http://account.channel.bdhuoke.com/img/PART17@2x.png" class="content_1" /> -->
     </div>
   </div>
 </template>
