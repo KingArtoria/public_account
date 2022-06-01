@@ -36,12 +36,15 @@
           <div class="content_2_1_3" id="content_2_1_3" />
         </div>
         <div class="content_2_2">
-          <div class="content_2_2_1" :style="`background-image:url('${vipInfo[vipType].background}');background-repeat:no-repeat;background-size:100%`">
+          <div class="content_2_2_1"
+            :style="`background-image:url('${vipInfo[vipType].background}');background-repeat:no-repeat;background-size:100%`">
             <div class="content_2_2_1_1">
               <img :src="userInfo.head" class="content_2_2_1_1_1" v-if="userInfo.head" />
               <div class="content_2_2_1_1_2">
-                <div class="content_2_2_1_1_2_1" :style="`color:${vipInfo[vipType].color}`">{{ userInfo.nick_name }}</div>
-                <div class="content_2_2_1_1_2_2" :style="`color:${vipInfo[vipType].color}`">{{ userInfo.vip_endtime }}</div>
+                <div class="content_2_2_1_1_2_1" :style="`color:${vipInfo[vipType].color}`">{{ userInfo.nick_name }}
+                </div>
+                <div class="content_2_2_1_1_2_2" :style="`color:${vipInfo[vipType].color}`">{{ userInfo.vip_endtime }}
+                </div>
               </div>
             </div>
           </div>
@@ -84,7 +87,8 @@
         <div class="content_3_2">
           <div class="content_3_2_1">
             <input type="text" class="content_3_2_1_1" placeholder="请输入您的称呼" v-model="applyForBlackCardParams.name" />
-            <input type="number" class="content_3_2_1_1" placeholder="请输入您的联系方式" v-model="applyForBlackCardParams.mobile" />
+            <input type="number" class="content_3_2_1_1" placeholder="请输入您的联系方式"
+              v-model="applyForBlackCardParams.mobile" />
             <div class="content_3_2_1_2" @click="applyForBlackCard">提交申请</div>
           </div>
         </div>
@@ -92,6 +96,15 @@
         <img src="http://account.channel.bdhuoke.com/img/fuwuliuchen.png" class="content_3_4" />
       </div>
     </div>
+    <van-overlay :show="show">
+      <div class="wrapper" @click.stop>
+        <div class="wrapper_1">
+          <img src="http://account.channel.bdhuoke.com/img/bangdzh@2x.png" class="wrapper_1_1" />
+          <img src="http://account.channel.bdhuoke.com/img/close@2x.png" class="wrapper_1_2" @click="show = false" />
+          <div class="wrapper_1_3" @click="goBindAccount">去绑定</div>
+        </div>
+      </div>
+    </van-overlay>
   </div>
 </template>
 
@@ -121,9 +134,15 @@ export default {
       wechatPayParams: {},
       // TODO 用户信息
       userInfo: {},
+      // 展示遮罩
+      show: false,
     };
   },
   methods: {
+    // ? 前往绑定账号
+    goBindAccount() {
+      this.$router.push('/register');
+    },
     // ? 切换tabs
     changeTab(tab) {
       this.active = tab;
@@ -145,6 +164,9 @@ export default {
       this.vipInfo = VIP_INFO;
       this.createOrderParams.paytype = 'wxpay';
       this.createOrderParams.token = this.TOKEN;
+      setTimeout(() => {
+        if (!this.TOKEN) this.show = true;
+      }, 1000);
     },
     // ? 切换会员类型
     changeVipType(type) {
